@@ -1,6 +1,7 @@
 import './App.css'
 import Navbar from './components/navbar'
 import Hero from './components/Hero'
+import AboutMe from './components/AboutMe'
 
 function App() {
   return (
@@ -8,11 +9,8 @@ function App() {
       <Navbar />
 
       <main>
-        {/* Sección Hero - Página 1 de tu PDF */}
         < Hero />
-
-        {/* Aquí irán las demás secciones que crearemos luego */}
-        <section id="portfolio"><h2>Portfolio</h2></section>
+        < AboutMe />
       </main>
 
       <footer>
