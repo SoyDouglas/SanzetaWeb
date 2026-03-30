@@ -1,18 +1,18 @@
 import React from 'react';
 import '../styles/AboutMe.css';
-import artistImg from '../assets/SanzetaImage.JPG'; // La foto original del estudio
+import artistImg from '../assets/SanzetaImage.JPG'; 
 
 const About = () => {
   return (
     <section id="about" className="about-section">
       <div className="about-container">
-        {/* Columna de Imagen: Con un marco decorativo para elevar el diseño */}
+        {/* Lado Izquierdo: Imagen */}
         <div className="about-image">
           <img src={artistImg} alt="Sanzeta Art - Professional Tattooist" />
           <div className="image-frame"></div>
         </div>
 
-        {/* Columna de Texto: Foco en Trust & Quality */}
+        {/* Lado Derecho: Texto (Ya no hay una 's' estorbando) */}
         <div className="about-content">
           <span className="section-subtitle">The Artist</span>
           <h2 className="section-title">Behind the needle</h2>
