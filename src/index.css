@@ -1,0 +1,28 @@
+:root {
+  --primary: #000000;   /* Negro profundo */
+  --accent: #ffffff;    /* Blanco */
+  --gray: #888888;      /* Gris para textos secundarios */
+  --bg-dark: #121212;   /* Fondo casi negro */
+  font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--primary);
+  color: var(--accent);
+  line-height: 1.5;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
