@@ -1,5 +1,6 @@
 import './App.css'
 import Navbar from './components/navbar'
+import Hero from './components/Hero'
 
 function App() {
   return (
@@ -8,11 +9,7 @@ function App() {
 
       <main>
         {/* Sección Hero - Página 1 de tu PDF */}
-        <section id="hero">
-          <h1>Tattoo Artist in Medellín</h1>
-          <p>Custom and professional tattoos for travelers and expats.</p>
-          <button className="btn-primary">BOOK YOUR TATTOO</button>
-        </section>
+        < Hero />
 
         {/* Aquí irán las demás secciones que crearemos luego */}
         <section id="portfolio"><h2>Portfolio</h2></section>

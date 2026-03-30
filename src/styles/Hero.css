@@ -1,0 +1,82 @@
+.hero-simple {
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #000; /* Fondo negro profundo */
+  text-align: center;
+  padding: 0 20px;
+}
+
+/* 1. Tagline: Muy pequeño y discreto para diferenciarse del menú */
+.hero-tagline {
+  font-size: 0.7rem;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  color: #555; /* Gris oscuro para evitar competencia visual */
+  margin-bottom: 2rem;
+  font-weight: 300;
+}
+
+/* 2. Título: El centro de atención en dos líneas */
+.hero-title {
+  font-size: clamp(3rem, 10vw, 6rem);
+  font-weight: 900;
+  line-height: 1;
+  text-transform: uppercase;
+  color: #fff;
+  margin-bottom: 2rem;
+  letter-spacing: -2px;
+}
+
+.hero-title-accent {
+  display: block;
+  font-weight: 200; /* Coherencia total con la descripción */
+  color: #ccc;
+}
+
+/* 3. Descripción: Texto suave y legible */
+.hero-description {
+  /* Ahora usamos mayúsculas para unificar con el título y el botón */
+  text-transform: uppercase; 
+  
+  /* Usamos el mismo peso ligero (200) que el 'in Medellín' */
+  font-weight: 200; 
+  
+  /* Aumentamos el espaciado para que se vea elegante y no como un menú */
+  letter-spacing: 4px; 
+  
+  /* Color grisáceo para mantener la jerarquía */
+  color: #777; 
+  
+  font-size: 0.9rem;
+  max-width: 600px;
+  margin: 0 auto 3.5rem;
+  line-height: 1.8;
+}
+
+/* 4. Botón de llamado a la acción */
+.hero-btn {
+  display: inline-block;
+  background-color: #fff;
+  color: #000;
+  padding: 20px 50px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 0.8rem;
+  transition: all 0.3s ease;
+}
+
+.hero-btn:hover {
+  background-color: #888;
+  color: #fff;
+}
+
+.hero-location {
+  margin-top: 2.5rem;
+  font-size: 0.65rem;
+  color: #444;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
