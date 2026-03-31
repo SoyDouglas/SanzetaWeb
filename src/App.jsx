@@ -5,14 +5,15 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import AboutMe from './components/AboutMe';
 import PortfolioHome from './components/PortfolioHome';
-import FullGallery from './components/FullGallery'; // Ahora sí lo encontrará
+import FullGallery from './components/FullGallery'; 
 import BookingProcess from './components/BookingProcess';
+import Info from './components/Info'; // 1. Importa el nuevo componente
 
 function App() {
   return (
     <Router>
       <Routes>
-        {/* RUTA 1: Tu página principal con el Hero, About y el Abanico 3D */}
+        {/* RUTA 1: Página principal */}
         <Route 
           path="/" 
           element={
@@ -22,7 +23,7 @@ function App() {
                 <Hero />
                 <AboutMe />
                 <PortfolioHome />
-                < BookingProcess />
+                <BookingProcess />
               </main>
               <footer>
                 <p>© 2026 Sanzeta Tattoo - Medellín/Rionegro</p>
@@ -31,10 +32,16 @@ function App() {
           } 
         />
 
-        {/* RUTA 2: La pestaña nueva que se abre al dar clic en el botón */}
+        {/* RUTA 2: Galería completa */}
         <Route 
           path="/gallery" 
           element={<FullGallery />} 
+        />
+
+        {/* RUTA 3: Nueva pestaña de Info */}
+        <Route 
+          path="/info" 
+          element={<Info />} 
         />
       </Routes>
     </Router>
