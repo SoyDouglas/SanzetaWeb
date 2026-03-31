@@ -2,6 +2,7 @@ import './App.css'
 import Navbar from './components/navbar'
 import Hero from './components/Hero'
 import AboutMe from './components/AboutMe'
+import PortfolioHome from './components/PortfolioHome'
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <main>
         < Hero />
         < AboutMe />
+        < PortfolioHome />
       </main>
 
       <footer>
