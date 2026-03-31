@@ -185,16 +185,17 @@
   cursor: pointer;
 }
 
-/* Responsivo para móviles */
-/* --- RESPONSIVO PARA MÓVILES (Ruleta Horizontal) --- */
+
+/* --- RESPONSIVO PARA MÓVILES --- */
+/* --- RESPONSIVO PARA MÓVILES (Scroll Horizontal Simple y Limpio) --- */
 @media (max-width: 768px) {
   .portfolio-showcase-3d {
-    padding: 80px 0 100px 0; /* Quitamos el padding lateral para que el scroll toque los bordes */
+    padding: 80px 0 100px 0;
   }
 
   .portfolio-header-center {
     margin-bottom: 30px;
-    padding: 0 5%; /* Devolvemos el padding solo a los textos */
+    padding: 0 5%;
   }
 
   .section-title {
@@ -203,103 +204,54 @@
     margin-bottom: 20px;
   }
 
-  /* Transformamos el contenedor en un Scroll Horizontal Nativo */
+  /* Contenedor: Scroll nativo fluido sin imanes (scroll-snap eliminado) */
   .portfolio-fan-container {
-    height: 400px; /* Altura fija para el carrusel */
+    height: 360px; /* Ajustado al alto de las cartas */
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
     overflow-x: auto;
     overflow-y: hidden;
-    scroll-snap-type: x mandatory; /* Activa la "ruleta" magnética */
-    scroll-behavior: smooth;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
+    padding: 0 20px; /* Padding simple para separar de los bordes de la pantalla */
+    gap: 15px; /* Separación limpia y estática entre cartas */
     
-    /* TRUCO UX: padding calculando la mitad de la pantalla (50vw) menos la mitad del ancho de la carta (130px) */
-    /* Esto permite que la Carta 1 y la Carta 8 queden exactamente en el centro */
-    padding-left: calc(50vw - 130px);
-    padding-right: calc(50vw - 130px);
-    
-    /* Ocultamos la barra de scroll nativa para mayor elegancia */
+    /* Ocultamos la barra de scroll nativa */
     -ms-overflow-style: none;  
     scrollbar-width: none;  
   }
+  
   .portfolio-fan-container::-webkit-scrollbar { 
     display: none; 
   }
 
+  /* Cartas: Tamaño fijo, sin escalas, ni opacidades, ni clases dinámicas */
   .fan-item {
-    position: relative; /* Quitamos el position absolute del escritorio */
-    flex: 0 0 auto; /* Evita que las cartas se encojan */
-    width: 260px;
-    height: 338px;
-    scroll-snap-align: center; /* Se imanta al centro de la pantalla */
-    
-    /* Estado inactivo (cartas a los lados) */
-    transform: scale(0.85);
-    opacity: 0.4;
-    margin: 0 5px; /* Separación base muy pegada */
-    transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+    position: relative;
+    flex: 0 0 auto; 
+    width: 250px;
+    height: 325px;
+    opacity: 1 !important; /* Siempre visibles al 100% */
+    transform: none !important; /* Anulamos cualquier escala */
+    margin: 0; /* El margen lo maneja el 'gap' del contenedor */
     z-index: 1;
+    transition: none; /* Quitamos transiciones para evitar bugs */
   }
 
-  /* --- NUEVOS ESTILOS DE ROTACIÓN AUTOMÁTICA --- */
-
-/* 1. Definimos la animación de giro continuo */
-@keyframes continuousSpin {
-  from {
-    /* Mantenemos el escalado y rotación del abanico que ya definimos */
-    transform: rotate(var(--rot)) scale(var(--s)) translateX(var(--x)) rotateY(0deg);
-  }
-  to {
-    transform: rotate(var(--rot)) scale(var(--s)) translateX(var(--x)) rotateY(360deg);
-  }
-}
-
-/* 2. Aplicamos la animación a las cartas en su estado 'section-active' */
-.section-active .fan-item {
-  /* ... (Mantén tu código anterior de revealFan aquí) ... */
-  
-  /* NUEVA LÍNEA: Aplicamos la animación de giro */
-  animation: revealFan 1s cubic-bezier(0.16, 1, 0.3, 1) forwards, 
-             continuousSpin 20s linear infinite; /* 20s es la velocidad de giro */
-  
-  /* TRUCO UX: Retraso de animación para que no giren todas al mismo tiempo */
-  animation-delay: calc(var(--index-delay) * 0.1s), calc(var(--index-delay) * 1.5s); 
-  
-  /* Necesario para el efecto 3D */
-  transform-style: preserve-3d;
-  perspective: 1000px; 
-}
-
-/* 3. Pausamos el giro automático al pasar el mouse (Hover) para que puedan ver el arte */
-.fan-item:hover {
-  animation-play-state: running, paused; 
-  transform: rotate(var(--rot)) scale(calc(var(--s) * 1.05)) translateX(var(--x)) !important; 
-  z-index: 50; /* Lo traemos al frente */
-}
-
-  /* Anulamos las variables de posición 3D del escritorio */
+  /* Anulamos las variables de posición 3D y animaciones del escritorio */
+  .section-active .fan-item,
   .section-active .fan-pos-0, .section-active .fan-pos-1, 
   .section-active .fan-pos-2, .section-active .fan-pos-3, 
   .section-active .fan-pos-4, .section-active .fan-pos-5, 
   .section-active .fan-pos-6, .section-active .fan-pos-7 {
-    transform: scale(0.85); /* Sobrescribimos la rotación y el eje Y */
-    animation: none; /* Quitamos la animación de apilamiento */
+    animation: none !important;
+    transform: none !important;
   }
 
-  /* --- EL MAGICO EFECTO DE CARTA CENTRAL --- */
-  .fan-item.active-center {
-    transform: scale(1.05); /* Se hace más grande */
-    opacity: 1; /* Brilla al 100% */
-    margin: 0 25px; /* EMPUJA a las cartas de al lado creando espacio */
-    z-index: 10;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.8);
-  }
-
-  .fan-item.active-center img {
-    filter: grayscale(0%); /* La carta central revela su detalle en Black & Grey */
+  /* Mostramos el arte a todo color en celular, sin depender del hover */
+  .fan-item img {
+    filter: grayscale(0%) !important; 
   }
 
   /* Botón */
