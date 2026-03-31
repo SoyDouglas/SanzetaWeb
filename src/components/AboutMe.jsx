@@ -17,8 +17,8 @@ const About = () => {
           <span className="section-subtitle">The Artist</span>
           <h2 className="section-title">Behind the needle</h2>
           <p className="about-text">
-            With over 6 years of experience, Sanzeta specializes in <strong>Realism, Black & Grey, and Fine Line</strong>. 
-            Based in Medellín and Rionegro, the focus is always on providing a professional, safe, and clean environment for every client.
+            With over 6 years of experience, Sanzeta specializes in <strong>Realism and Black & Grey,</strong>. 
+            Based in Rionegro, the focus is always on providing a professional, safe, and clean environment for every client.
           </p>
           <p className="about-text">
             Every piece is custom-designed to tell a story, ensuring that travelers and expats 

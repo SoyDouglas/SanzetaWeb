@@ -2,13 +2,13 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.5rem 0;
+  padding: 1.5rem 5%; /* Añadido un 5% de padding lateral para que no pegue a los bordes */
   background-color: transparent;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   position: sticky;
   top: 0;
   z-index: 1000;
-  backdrop-filter: blur(10px); /* Efecto cristal suave */
+  backdrop-filter: blur(10px); 
 }
 
 .navbar-logo a {
@@ -16,12 +16,15 @@
   font-weight: 800;
   letter-spacing: 4px;
   color: #fff;
+  text-decoration: none; /* Asegura que no tenga subrayado */
 }
 
 .navbar-links {
   display: flex;
   gap: 2rem;
   list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .navbar-links a {
@@ -29,6 +32,7 @@
   font-weight: 500;
   letter-spacing: 2px;
   color: #888;
+  text-decoration: none;
   transition: color 0.3s ease;
 }
 
@@ -43,6 +47,7 @@
   padding: 10px 20px;
   border: 1px solid #fff;
   color: #fff;
+  text-decoration: none;
   transition: all 0.3s ease;
 }
 
@@ -51,9 +56,86 @@
   color: #000;
 }
 
-/* Responsivo para celulares */
-@media (max-width: 768px) {
+/* Ocultar elementos específicos por defecto */
+.mobile-only-cta {
+  display: none;
+}
+
+/* --- ESTILOS DEL BOTÓN HAMBURGUESA --- */
+.hamburger {
+  display: none; /* Oculto en escritorio */
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 20px;
+  cursor: pointer;
+  z-index: 1001; /* Debe estar por encima del menú desplegable */
+}
+
+.hamburger span {
+  display: block;
+  height: 2px;
+  width: 100%;
+  background-color: #fff;
+  border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* --- RESPONSIVO PARA TABLETS Y MÓVILES --- */
+@media (max-width: 992px) {
+  /* Mostrar botón hamburguesa */
+  .hamburger {
+    display: flex;
+  }
+
+  /* Ocultar botón CTA del header superior */
+  .desktop-only {
+    display: none;
+  }
+
+  /* Mostrar el botón CTA dentro de la lista de enlaces */
+  .mobile-only-cta {
+    display: block;
+    margin-top: 2rem;
+  }
+
+  /* Transformar la lista de enlaces en un menú Full Screen */
   .navbar-links {
-    display: none; /* Aquí luego podrías implementar un menú hamburguesa */
+    position: fixed; /* Fixed asegura que cubra toda la pantalla incluso si hacen scroll */
+    top: 0;
+    left: -100%; /* Oculto fuera de la pantalla por la izquierda */
+    width: 100%;
+    height: 100vh;
+    background-color: #080807; /* Fondo oscuro sólido */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2.5rem;
+    transition: left 0.4s cubic-bezier(0.25, 1, 0.5, 1); /* Transición suave de entrada */
+    z-index: 999; /* Por debajo del logo y el botón hamburguesa */
+  }
+
+  /* Clase activa que empuja el menú a la pantalla */
+  .navbar-links.active {
+    left: 0;
+  }
+
+  /* Aumentar el tamaño de fuente para que sea fácil tocar con el dedo */
+  .navbar-links a {
+    font-size: 1.2rem;
+    letter-spacing: 4px;
+  }
+
+  /* --- ANIMACIÓN DE LA HAMBURGUESA A "X" --- */
+  .hamburger.open span:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+  }
+  
+  .hamburger.open span:nth-child(2) {
+    opacity: 0; /* La raya del medio desaparece */
+  }
+  
+  .hamburger.open span:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
   }
 }

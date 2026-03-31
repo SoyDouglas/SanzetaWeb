@@ -1,0 +1,232 @@
+.booking-section {
+  background-color: #050505;
+  padding: 120px 5%;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.booking-header {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.booking-title {
+  font-size: 3rem;
+  font-weight: 800; /* Igual que el resto de tu web */
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  margin-bottom: 5px;
+  /* Eliminamos la tipografía serif para que use la global */
+}
+
+.booking-subtitle {
+  color: #888;
+  font-size: 1rem;
+  letter-spacing: 1px;
+}
+
+.timeline-container {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 0;
+}
+
+.timeline-line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 1px;
+  background: linear-gradient(to bottom, transparent, white, white, transparent);
+  transform: translateX(-50%);
+}
+
+.timeline-item {
+  position: relative;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  margin-bottom: 60px;
+}
+
+.timeline-item.left {
+  left: 0;
+  justify-content: flex-end;
+  padding-right: 50px;
+}
+
+.timeline-item.right {
+  left: 50%;
+  justify-content: flex-start;
+  padding-left: 50px;
+}
+
+/* --- PUNTOS Y NÚMEROS EN LA LÍNEA --- */
+.timeline-dot {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Posición del contenedor del punto relativo a la línea */
+.timeline-item.left .timeline-dot { right: -12px; }
+.timeline-item.right .timeline-dot { left: -12px; }
+
+/* Estilo general del número */
+.dot-number {
+  font-family: 'Times New Roman', serif; /* Mantenemos el estilo elegante solo para el número */
+  font-size: 1.5rem;
+  color: white;
+  position: absolute;
+}
+
+/* El pequeño punto circular (ahora en todos los ítems) */
+.timeline-dot::before {
+  content: '';
+  width: 4px;
+  height: 4px;
+  background-color: white;
+  border-radius: 50%;
+}
+
+/* --- Posicionamiento de los números para que no se superpongan a la línea --- */
+/* En el lado derecho (02, 04), el número va a la izquierda de la línea */
+.timeline-item.right .dot-number {
+  left: -40px; 
+}
+
+/* NUEVO: En el lado izquierdo (01, 03), el número va a la derecha de la línea */
+.timeline-item.left .dot-number {
+  display: block; /* Forzamos que se muestre (antes estaba oculto) */
+  right: -40px; 
+}
+
+.timeline-item.left .timeline-dot::before {
+  content: '';
+  width: 4px;
+  height: 4px;
+  background-color: white;
+  border-radius: 50%;
+}
+
+.timeline-item.right .dot-number {
+  left: -40px;
+}
+.timeline-item.left .dot-number {
+  display: none;
+}
+
+.timeline-content {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  max-width: 350px;
+}
+
+.timeline-item.left .timeline-content {
+  flex-direction: row-reverse;
+  text-align: right;
+}
+
+.icon-container {
+  width: 60px;
+  height: 60px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.icon-container svg {
+  width: 24px;
+  height: 24px;
+  color: #fff;
+}
+
+.text-container h3 {
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin-bottom: 8px;
+  letter-spacing: 1px;
+}
+
+.text-container p {
+  color: #888;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.booking-cta {
+  margin-top: 80px;
+  text-align: center;
+}
+
+.booking-cta p {
+  color: #aaa;
+  margin-bottom: 20px;
+  font-style: italic;
+  font-size: 1.2rem;
+}
+
+.btn-booking-large {
+  display: inline-block;
+  padding: 5px 40px;
+  border: 1px solid white;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 0.9rem;
+  text-decoration: none;
+  background-color: black;
+  transition: all 0.3s ease;
+}
+
+.btn-booking-large:hover {
+  background-color: white;
+  color: #050505;
+}
+
+@media (max-width: 768px) {
+  .booking-title { font-size: 2.2rem; }
+  
+  .timeline-line {
+    left: 30px;
+    transform: none;
+  }
+
+  .timeline-item {
+    width: 100%;
+    margin-bottom: 40px;
+  }
+
+  .timeline-item.left, 
+  .timeline-item.right {
+    left: 0;
+    justify-content: flex-start;
+    padding-left: 80px;
+    padding-right: 0;
+  }
+
+  .timeline-item.left .timeline-content {
+    flex-direction: row;
+    text-align: left;
+  }
+
+  .timeline-dot { left: 30px !important; }
+  
+  .timeline-item.left .timeline-dot { left: 28px !important; }
+  
+  .timeline-item.right .dot-number {
+    left: auto;
+    right: -40px;
+  }
+}

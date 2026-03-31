@@ -6,6 +6,7 @@ import Hero from './components/Hero';
 import AboutMe from './components/AboutMe';
 import PortfolioHome from './components/PortfolioHome';
 import FullGallery from './components/FullGallery'; // Ahora sí lo encontrará
+import BookingProcess from './components/BookingProcess';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
                 <Hero />
                 <AboutMe />
                 <PortfolioHome />
+                < BookingProcess />
               </main>
               <footer>
                 <p>© 2026 Sanzeta Tattoo - Medellín/Rionegro</p>
