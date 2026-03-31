@@ -1,0 +1,145 @@
+.health-section {
+  background-color: #050505;
+  padding: 120px 5%;
+  color: #fff;
+}
+
+.health-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 80px;
+  align-items: center;
+}
+
+/* El título usa la misma clase que en PortfolioHome y BookingProcess */
+.health-content .section-title {
+  font-size: 3rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  margin-bottom: 10px;
+  text-align: left; /* Alineado a la izquierda para esta sección */
+}
+
+.health-subtitle {
+  color: #888;
+  font-size: 1.1rem;
+  margin-bottom: 50px;
+  letter-spacing: 1px;
+}
+
+.health-items {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin-bottom: 50px;
+}
+
+.health-item {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.health-icon {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  color: #fff; /* Icono blanco limpio */
+  margin-top: 3px;
+}
+
+.health-text h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.health-text p {
+  color: #888;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+.health-footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 30px;
+}
+
+.health-highlight {
+  color: #fff;
+  font-weight: 600;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+.health-footer p:last-child {
+  color: #888;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+/* --- ESTILOS DE LA IMAGEN --- */
+.health-image-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.health-image-border {
+  padding: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.15); /* Marco fino elegante */
+  background-color: transparent;
+}
+
+.health-image-border img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  aspect-ratio: 4/5; /* Mantiene una proporción vertical bonita */
+  filter: grayscale(20%) contrast(1.1); /* Toque oscuro para encajar con la web */
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 992px) {
+  .health-container {
+    gap: 50px;
+  }
+}
+
+@media (max-width: 768px) {
+  .health-section {
+    padding: 80px 5%;
+  }
+
+  .health-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 60px;
+  }
+  
+  .health-content .section-title {
+    text-align: center;
+    font-size: 2.2rem;
+  }
+  
+  .health-item {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .health-icon {
+    margin-bottom: 10px;
+  }
+
+  .health-image-wrapper {
+    order: -1; /* Sube la imagen arriba del texto en móviles */
+    max-width: 80%;
+    margin: 0 auto;
+  }
+}

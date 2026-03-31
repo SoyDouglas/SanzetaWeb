@@ -8,6 +8,7 @@ import PortfolioHome from './components/PortfolioHome';
 import FullGallery from './components/FullGallery'; 
 import BookingProcess from './components/BookingProcess';
 import Info from './components/Info'; // 1. Importa el nuevo componente
+import HealthAndSafety from './components/HealthAndSafety';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
                 <Hero />
                 <AboutMe />
                 <PortfolioHome />
+                <HealthAndSafety />
                 <BookingProcess />
               </main>
               <footer>
