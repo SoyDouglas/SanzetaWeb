@@ -1,14 +1,14 @@
 import React, { useEffect, useRef, useState } from 'react';
 import '../styles/PortfolioHome.css';
 
-import t1 from '../assets/portfolio/t1.jpeg';
-import t2 from '../assets/portfolio/t2.jpeg';
-import t3 from '../assets/portfolio/t3.jpeg';
-import t4 from '../assets/portfolio/t4.jpeg'; 
-import t5 from '../assets/portfolio/t5.jpeg';
-import t6 from '../assets/portfolio/t6.jpeg';
-import t7 from '../assets/portfolio/t7.jpeg';
-import t8 from '../assets/portfolio/t8.jpeg';
+import t1 from '../assets/portfolioHome/t1.jpeg';
+import t2 from '../assets/portfolioHome/t2.jpeg';
+import t3 from '../assets/portfolioHome/t3.jpeg';
+import t4 from '../assets/portfolioHome/t4.jpeg'; 
+import t5 from '../assets/portfolioHome/t5.jpeg';
+import t6 from '../assets/portfolioHome/t6.jpeg';
+import t7 from '../assets/portfolioHome/t7.jpeg';
+import t8 from '../assets/portfolioHome/t8.jpeg';
 
 const PortfolioHome = () => {
   const sectionRef = useRef(null);
