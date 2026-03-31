@@ -244,6 +244,42 @@
     z-index: 1;
   }
 
+  /* --- NUEVOS ESTILOS DE ROTACIÓN AUTOMÁTICA --- */
+
+/* 1. Definimos la animación de giro continuo */
+@keyframes continuousSpin {
+  from {
+    /* Mantenemos el escalado y rotación del abanico que ya definimos */
+    transform: rotate(var(--rot)) scale(var(--s)) translateX(var(--x)) rotateY(0deg);
+  }
+  to {
+    transform: rotate(var(--rot)) scale(var(--s)) translateX(var(--x)) rotateY(360deg);
+  }
+}
+
+/* 2. Aplicamos la animación a las cartas en su estado 'section-active' */
+.section-active .fan-item {
+  /* ... (Mantén tu código anterior de revealFan aquí) ... */
+  
+  /* NUEVA LÍNEA: Aplicamos la animación de giro */
+  animation: revealFan 1s cubic-bezier(0.16, 1, 0.3, 1) forwards, 
+             continuousSpin 20s linear infinite; /* 20s es la velocidad de giro */
+  
+  /* TRUCO UX: Retraso de animación para que no giren todas al mismo tiempo */
+  animation-delay: calc(var(--index-delay) * 0.1s), calc(var(--index-delay) * 1.5s); 
+  
+  /* Necesario para el efecto 3D */
+  transform-style: preserve-3d;
+  perspective: 1000px; 
+}
+
+/* 3. Pausamos el giro automático al pasar el mouse (Hover) para que puedan ver el arte */
+.fan-item:hover {
+  animation-play-state: running, paused; 
+  transform: rotate(var(--rot)) scale(calc(var(--s) * 1.05)) translateX(var(--x)) !important; 
+  z-index: 50; /* Lo traemos al frente */
+}
+
   /* Anulamos las variables de posición 3D del escritorio */
   .section-active .fan-pos-0, .section-active .fan-pos-1, 
   .section-active .fan-pos-2, .section-active .fan-pos-3, 

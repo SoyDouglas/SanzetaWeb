@@ -1,25 +1,42 @@
-import './App.css'
-import Navbar from './components/navbar'
-import Hero from './components/Hero'
-import AboutMe from './components/AboutMe'
-import PortfolioHome from './components/PortfolioHome'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import './App.css';
+
+import Navbar from './components/navbar';
+import Hero from './components/Hero';
+import AboutMe from './components/AboutMe';
+import PortfolioHome from './components/PortfolioHome';
+import FullGallery from './components/FullGallery'; // Ahora sí lo encontrará
 
 function App() {
   return (
-    <div className="app-container">
-      <Navbar />
+    <Router>
+      <Routes>
+        {/* RUTA 1: Tu página principal con el Hero, About y el Abanico 3D */}
+        <Route 
+          path="/" 
+          element={
+            <div className="app-container">
+              <Navbar />
+              <main>
+                <Hero />
+                <AboutMe />
+                <PortfolioHome />
+              </main>
+              <footer>
+                <p>© 2026 Sanzeta Tattoo - Medellín/Rionegro</p>
+              </footer>
+            </div>
+          } 
+        />
 
-      <main>
-        < Hero />
-        < AboutMe />
-        < PortfolioHome />
-      </main>
-
-      <footer>
-        <p>© 2024 Sanzeta Tattoo - Medellín/Rionegro</p>
-      </footer>
-    </div>
-  )
+        {/* RUTA 2: La pestaña nueva que se abre al dar clic en el botón */}
+        <Route 
+          path="/gallery" 
+          element={<FullGallery />} 
+        />
+      </Routes>
+    </Router>
+  );
 }
 
-export default App
+export default App;
