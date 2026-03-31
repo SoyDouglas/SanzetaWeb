@@ -89,7 +89,7 @@ const PortfolioHome = () => {
 
       <div className="view-more-container">
         <a href="/gallery" target="_blank" rel="noopener noreferrer" className="btn-outline-large">
-          VIEW FULL GALLERY + DETAILS
+          VIEW FULL GALLERY
         </a>
       </div>
 
