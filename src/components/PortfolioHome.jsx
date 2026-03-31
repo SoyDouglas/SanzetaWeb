@@ -1,9 +1,9 @@
 import React, { useEffect, useRef, useState } from 'react';
 import '../styles/PortfolioHome.css';
 
-import t1 from '../assets/portfolio/t1.JPEG';
-import t2 from '../assets/portfolio/t2.JPEG';
-import t3 from '../assets/portfolio/t3.JPEG';
+import t1 from '../assets/portfolio/t1.jpeg';
+import t2 from '../assets/portfolio/t2.jpeg';
+import t3 from '../assets/portfolio/t3.jpeg';
 import t4 from '../assets/portfolio/t4.jpeg'; 
 import t5 from '../assets/portfolio/t5.jpeg';
 import t6 from '../assets/portfolio/t6.jpeg';
