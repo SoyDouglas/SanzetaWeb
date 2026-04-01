@@ -1,0 +1,35 @@
+.ready-section {
+  background-color: #050505;
+  padding: 100px 5%;
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.ready-container h2 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.ready-container p {
+  color: #888;
+  font-size: 1.2rem;
+  margin-bottom: 40px;
+}
+
+.btn-primary {
+  display: inline-block;
+  padding: 20px 45px;
+  background-color: #fff;
+  color: #000;
+  text-decoration: none;
+  font-weight: 700;
+  letter-spacing: 2px;
+  transition: 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #888; /* O un color de acento */
+  transform: translateY(-5px);
+}

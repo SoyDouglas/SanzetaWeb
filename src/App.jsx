@@ -9,6 +9,8 @@ import FullGallery from './components/FullGallery';
 import BookingProcess from './components/BookingProcess';
 import Info from './components/Info'; // 1. Importa el nuevo componente
 import HealthAndSafety from './components/HealthAndSafety';
+import ReadyToInk from './components/ReadyToInk';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -26,9 +28,10 @@ function App() {
                 <PortfolioHome />
                 <HealthAndSafety />
                 <BookingProcess />
+                <ReadyToInk />
               </main>
               <footer>
-                <p>© 2026 Sanzeta Tattoo - Medellín/Rionegro</p>
+                <Footer />
               </footer>
             </div>
           } 
