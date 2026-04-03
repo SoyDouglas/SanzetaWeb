@@ -64,7 +64,7 @@ const PortfolioHome = () => {
       <div className="portfolio-header-center">
         <h2 className="section-title">THE KIND OF TATTOO YOU WON'T REGRET.</h2>
         <p className="portfolio-intro">
-          Exclusive blackwork tattoos by appointment-only.<br />
+          Exclusive tattoos by appointment-only.<br />
           Where clean design meets permanent art.
         </p>
       </div>
