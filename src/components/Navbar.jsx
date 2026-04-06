@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom'; // 1. Importación clave para navegar en React
 import '../styles/Navbar.css'
 
 const Navbar = () => {
@@ -10,7 +11,8 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="navbar-logo">
-        <a href="/" onClick={closeMenu}>SANZETA</a>
+        {/* Cambiamos 'a' por 'Link' y 'href' por 'to' */}
+        <Link to="/" onClick={closeMenu}>SANZETA</Link>
       </div>
       
       <div className={`hamburger ${isOpen ? 'open' : ''}`} onClick={toggleMenu}>
@@ -20,30 +22,26 @@ const Navbar = () => {
       </div>
 
       <ul className={`navbar-links ${isOpen ? 'active' : ''}`}>
-        <li><a href="#portfolio" onClick={closeMenu}>PORTFOLIO</a></li>
-        <li><a href="#about" onClick={closeMenu}>ABOUT</a></li>
+        {/* Actualizado a las rutas de tu App.jsx */}
+        <li><Link to="/" onClick={closeMenu}>HOME</Link></li>
+        <li><Link to="/gallery" onClick={closeMenu}>GALLERY</Link></li>
         
-        {/* Enlace actualizado a la nueva pestaña */}
         <li>
-          <a 
-            href="/info" 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            onClick={closeMenu}
-          >
+          <Link to="/info" onClick={closeMenu}>
             INFO
-          </a>
+          </Link>
         </li>
         
-        <li><a href="#contact" onClick={closeMenu}>CONTACT</a></li>
+        {/* Aquí estaba el error: ahora redirige a la ruta /contact */}
+        <li><Link to="/contact" onClick={closeMenu}>CONTACT</Link></li>
         
         <li className="mobile-only-cta">
-          <a href="#contact" className="nav-btn" onClick={closeMenu}>BOOK NOW</a>
+          <Link to="/contact" className="nav-btn" onClick={closeMenu}>BOOK NOW</Link>
         </li>
       </ul>
 
       <div className="navbar-cta desktop-only">
-        <a href="#contact" className="nav-btn">BOOK NOW</a>
+        <Link to="/contact" className="nav-btn">BOOK NOW</Link>
       </div>
     </nav>
   );

@@ -1,0 +1,242 @@
+/* --- Estilos Generales de la Pestaña de Contacto --- */
+.contact-page-wrapper {
+  background-color: #050505;
+  color: #fff;
+  padding: 160px 5% 100px; /* Padding superior alto para el Navbar */
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.contact-grid {
+  max-width: 1200px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr; /* Formulario más ancho */
+  gap: 100px; /* Espacio generoso entre columnas (UX) */
+}
+
+/* --- Títulos y Subtítulos --- */
+.contact-form-section .section-title {
+  font-size: 3rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.contact-subtitle {
+  color: #888;
+  font-size: 1.1rem;
+  margin-bottom: 60px;
+  line-height: 1.6;
+  max-width: 500px;
+}
+
+/* --- Estilos del Formulario --- */
+.booking-form {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+  color: #555; /* Color tenue por defecto */
+  transition: color 0.3s ease;
+}
+
+.form-group input, 
+.form-group textarea {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Línea sutil */
+  padding: 12px 0;
+  color: #fff;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: border-color 0.3s ease;
+}
+
+.form-group input:focus, 
+.form-group textarea:focus {
+  outline: none;
+  border-bottom-color: #fff; /* Línea blanca al enfocar */
+}
+
+/* UX: El label se ilumina cuando el input está enfocado */
+.form-group input:focus + label,
+.form-group textarea:focus + label {
+  color: #fff;
+}
+
+.btn-primary-contact {
+  background-color: #fff;
+  color: #000;
+  border: none;
+  padding: 20px 40px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  cursor: pointer;
+  margin-top: 30px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  align-self: flex-start; /* No ocupa todo el ancho */
+}
+
+.btn-primary-contact:hover {
+  background-color: #888;
+  transform: translateY(-3px);
+}
+
+/* --- Columna Derecha: Info Blocks --- */
+.contact-info-section {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+.info-block h3 {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+  color: #444; /* Muy sutil */
+}
+
+.info-text {
+  color: #888;
+  margin-bottom: 15px;
+  font-size: 0.95rem;
+}
+
+.whatsapp-link {
+  font-size: 1.3rem;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.whatsapp-link:hover {
+  color: #888;
+}
+
+.location-detail {
+  font-size: 1.2rem;
+  color: #fff;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.appointment-only {
+  font-size: 0.8rem;
+  color: #444;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+/* =========================================
+   NUEVO ESTILO INSTAGRAM HIGHLIGHT (Llamativo)
+   ========================================= */
+.instagram-highlight-card {
+  background-color: #0a0a0a; /* Ligeramente más claro que el fondo */
+  border: 1px solid rgba(255, 255, 255, 0.05); /* Borde muy fino */
+  padding: 40px;
+  margin-top: 20px;
+  transition: all 0.4s ease; /* Transición suave */
+}
+
+/* Efecto hover UX Premium: se eleva y el borde brilla un poco */
+.instagram-highlight-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.insta-card-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.insta-icon-svg {
+  color: #fff;
+  display: flex;
+  align-items: center;
+}
+
+.insta-card-header h3 {
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 0;
+  color: #fff;
+  font-weight: 700;
+}
+
+.insta-card-text {
+  color: #888;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.insta-block-btn {
+  display: block;
+  width: 100%;
+  text-align: center;
+  background-color: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+  padding: 18px;
+  text-decoration: none;
+  font-weight: 700;
+  letter-spacing: 2px;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.insta-block-btn:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+/* --- Responsive Layout (UX Movil) --- */
+@media (max-width: 1024px) {
+  .contact-grid {
+    gap: 60px;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-page-wrapper {
+    padding-top: 120px;
+  }
+  
+  .contact-grid {
+    grid-template-columns: 1fr; /* Una columna en móvil */
+    gap: 80px;
+  }
+  
+  .contact-form-section .section-title {
+    font-size: 2.5rem;
+  }
+  
+  .contact-column.contact-info-section {
+    order: 2; /* Formulario primero, info después */
+  }
+  
+  .instagram-highlight-card {
+    padding: 30px;
+  }
+}
