@@ -2,6 +2,11 @@ import React from 'react';
 import '../styles/BookingProcess.css';
 
 const BookingProcess = () => {
+  // Configuración del mensaje breve para WhatsApp
+  const whatsappNumber = "573142088193";
+  const message = encodeURIComponent("Hi! I'd like to book a tattoo session.");
+  const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${message}`;
+
   const steps = [
     {
       id: "01",
@@ -60,12 +65,10 @@ const BookingProcess = () => {
       </div>
 
       <div className="timeline-container">
-        {/* Línea central */}
         <div className="timeline-line"></div>
 
         {steps.map((step, index) => (
           <div key={index} className={`timeline-item ${index % 2 === 0 ? 'left' : 'right'}`}>
-            
             <div className="timeline-content">
               <div className="icon-container">
                 {step.icon}
@@ -75,19 +78,18 @@ const BookingProcess = () => {
                 <p>{step.desc}</p>
               </div>
             </div>
-
             <div className="timeline-dot">
               <span className="dot-number">{step.id}</span>
             </div>
-
           </div>
         ))}
       </div>
 
       <div className="booking-cta">
         <p>Ready to start your project?</p>
+        {/* Botón actualizado con la variable url */}
         <a 
-          href="https://wa.me/tunumerodewhatsapp" 
+          href={whatsappUrl} 
           target="_blank" 
           rel="noopener noreferrer" 
           className="btn-booking-large"
